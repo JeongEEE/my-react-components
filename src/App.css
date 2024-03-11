@@ -1,1 +1,50 @@
 .wrapper {min-width: 1100px;}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%; /* 입력 필드의 너비를 조정합니다. */
+  padding: 12px 12px; /* 상하, 좌우 패딩을 추가합니다. */
+  margin: 8px 0; /* 위아래 마진을 추가합니다. */
+  display: inline-block; /* 블록 레벨 요소로 표시합니다. */
+  border: 1px solid #ccc; /* 테두리 스타일을 정의합니다. */
+  border-radius: 4px; /* 테두리 둥근 모서리를 추가합니다. */
+  box-sizing: border-box; /* 박스 모델의 크기 계산 방법을 변경합니다. */
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+  border-color: #326bfb; /* 입력 필드에 포커스 될 때 테두리 색상을 변경합니다. */
+  outline: none; /* 기본 아웃라인을 제거합니다. */
+}
+
+.input-group {
+  margin-bottom: 15px; /* 입력 그룹 간의 간격 조정 */
+}
+.input-group label {
+  display: block; /* 레이블을 블록 레벨 요소로 만들어 줄바꿈 */
+  margin-bottom: 0px; /* 레이블과 입력 필드 사이의 간격 조정 */
+  padding-left: 8px;
+  font-size: 0.8rem;
+}
+.input-group input {
+  margin-top: 0;
+}
+
+.input-icon {
+  position: relative; /* 아이콘 위치를 조정하기 위해 relative 설정 */
+  display: inline-block; /* 필요에 따라 */
+}
+.input-icon input[type="text"] {
+  width: 100%;
+  padding-left: 40px; /* 앞쪽 아이콘에 여백을 주기 위해 */
+  padding-right: 40px; /* 뒤쪽 아이콘에 여백을 주기 위해 */
+}
+.input-icon .front_icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px; /* 앞쪽 아이콘의 위치 조정 */
+}
+.input-icon .end_icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px; /* 뒤쪽 아이콘의 위치 조정 */
+}
