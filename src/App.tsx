@@ -2,24 +2,25 @@ import React, { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
 import './App.css'
 import './styles/reset.css'
-import {Grid} from '@mui/material';
+import {Box, Grid} from '@mui/material';
 import Pagination from './components/Pagination.tsx';
 import { global } from './styles/global.ts'
 import InputComp from './components/Input.tsx';
 import {useToast} from './components/Toast.tsx';
 import {useModal} from './hooks/useModal.ts';
 import Modal from './components/Modal.tsx';
+import MyGrid from './components/Grid.tsx'
 
 function App() {
   const { showMessage } = useToast();
   const { showModal } = useModal();
+
   // Pagenation에 필요한 useState
   const [page, setPage] = useState<number>(1);
   const [totalPage, setTotalPage] = useState<number>(7)
 
   const showToast = () => showMessage('이것은 토스트 메시지 입니다!')
   const showDialog = () => {
-    console.log('modal 1')
     showModal({
       title: '모달1',
       message: '이것은 모달1 메시지입니다.',
@@ -29,7 +30,7 @@ function App() {
   }
 
   return (
-    <>
+    <Box>
       <Grid container p={7} direction="column">
         <Grid container pt={3} direction="column">
           <Pagination totalPage={totalPage} limit={5} page={page} setPage={setPage} />
@@ -46,11 +47,22 @@ function App() {
         </Grid>
 
         <Grid container pt={3} direction="column">
-
+          <MyGrid container direction="row" customCSS={css`background-color: blue;color: white;`}>
+            <MyGrid cols={'auto'}>auto</MyGrid>
+            <MyGrid cols={1}>1</MyGrid>
+            <MyGrid cols={1}>1</MyGrid>
+            <MyGrid cols={11}>11</MyGrid>
+            <MyGrid cols={12}>12</MyGrid>
+          </MyGrid>
+          <MyGrid container direction="row" justifyContent="end">
+            <MyGrid cols={1}>1</MyGrid>
+            <MyGrid cols={1}>1</MyGrid>
+          </MyGrid>
+          <MyGrid cols={'auto'}>abc</MyGrid>
         </Grid>
         <Modal />
       </Grid>
-    </>
+    </Box>
   )
 }
 

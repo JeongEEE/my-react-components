@@ -24,7 +24,7 @@ const ModalOverlay: React.FC<{ onClose: () => void; index:number, zIndex: number
 
 const Modal: React.FC = () => {
   const modals = useRecoilValue(modalStackState);
-  const { closeModal } = useModal(); // 이 부분이 수정되었습니다.
+  const { closeModal } = useModal();
 
   if (modals.length === 0) return null;
 
@@ -33,7 +33,7 @@ const Modal: React.FC = () => {
       {modals.map((modal, index) => (
         <React.Fragment key={index}>
           <ModalOverlay onClose={() => closeModal(modal.id)} index={index} zIndex={1000 + index} />
-          <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'white', padding: '30px', zIndex: 1000 + index + 1 }}>
+          <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'white', padding: '30px', borderRadius: '6px', zIndex: 1000 + index + 1 }}>
             <h2>{modal.title}</h2>
             <p css={css`margin: 25px 0;`}>{modal.message}</p>
             <button css={css`${global.btn};width: 8rem;height: 2.5rem;margin-right: 4px;`}
