@@ -8,6 +8,7 @@ interface SampleDialogProps {
 }
 
 const SampleDialog2 = ({ isOpen, closeModal }: SampleDialogProps) => {
+
   return (
     <Modal isOpen={isOpen} closeModal={closeModal}>
       <h1>모달2</h1>

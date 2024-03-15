@@ -6,21 +6,21 @@ import {Box, Grid} from '@mui/material';
 import Pagination from './components/Pagination.tsx';
 import { global } from './styles/global.ts'
 import InputComp from './components/Input.tsx';
-import {useToast} from './components/Toast.tsx';
 import MyGrid from './components/Grid.tsx'
 import useModal from './hooks/useModal.ts';
 import SampleDialog from './components/dialogs/SampleDialog1.tsx';
 import SampleDialog2 from './components/dialogs/SampleDialog2.tsx';
+import {useToast} from './hooks/useToast.ts';
 
 function App() {
-  const { showMessage } = useToast();
+  const addToast = useToast();
 
   // Pagenation에 필요한 useState
   const [page, setPage] = useState<number>(1);
   const [totalPage, setTotalPage] = useState<number>(7)
 
 
-  const showToast = () => showMessage('이것은 토스트 메시지 입니다!')
+  const showToast = () => addToast('이것은 토스트 메시지 입니다!')
 
   const dialog2 = useModal(() => {
     return (

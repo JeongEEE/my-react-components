@@ -3,10 +3,16 @@ import { atom } from 'recoil'
 //
 // const { persistAtom } = recoilPersist()
 
-export const sampleState = atom({
-  key: 'sampleState',
-  default: []
-})
+export interface ToastMessage {
+  id: number;
+  message: string;
+  duration: number;
+}
+
+export const toastState = atom<ToastMessage[]>({
+  key: 'toastState',
+  default: [],
+});
 
 // ########################################## sample
 // export const sample = atom({
