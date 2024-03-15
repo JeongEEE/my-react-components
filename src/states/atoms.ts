@@ -1,12 +1,11 @@
 import { atom } from 'recoil'
-import {ModalProps} from '../types';
 // import { recoilPersist } from 'recoil-persist'
 //
 // const { persistAtom } = recoilPersist()
 
-export const modalStackState = atom<ModalProps[]>({
-  key: 'modalStackState',
-  default: [],
+export const sampleState = atom({
+  key: 'sampleState',
+  default: []
 })
 
 // ########################################## sample
