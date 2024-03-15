@@ -23,7 +23,7 @@ const Modal = ({ children, isOpen, closeModal }) => {
 
   const content = (
     <div css={modalOverlay} onClick={close}>
-      <div css={modalWrap}>{children}</div>
+      <div className="modal" css={modalWrap}>{children}</div>
     </div>
   );
 

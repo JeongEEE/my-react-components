@@ -1,4 +1,4 @@
-import { atom } from 'recoil'
+import {atom, RecoilState} from 'recoil'
 // import { recoilPersist } from 'recoil-persist'
 //
 // const { persistAtom } = recoilPersist()
@@ -12,6 +12,10 @@ export interface ToastMessage {
 export const toastState = atom<ToastMessage[]>({
   key: 'toastState',
   default: [],
+});
+
+export const overlayLoadingState: RecoilState<boolean> = atom({
+  key: 'overlayLoadingState', default: false,
 });
 
 // ########################################## sample
